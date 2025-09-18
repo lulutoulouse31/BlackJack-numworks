@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Black Jack for NUMWORKS
 2025 - Lulutoulouse31
