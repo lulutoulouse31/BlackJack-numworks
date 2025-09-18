@@ -24,7 +24,6 @@ To install Black Jack for Numworks, follow these steps:
 
 ## Screenshots
 
-<img src="pictures/main_menu.png" alt="Main Menu" width="300">
 <img src="pictures/pregame_menu.png" alt="Pregame Menu" width="300">
 <img src="pictures/ingame_view.png" alt="Gameplay" width="300">
 <img src="pictures/win_screen.png" alt="Win Screen" width="300">
