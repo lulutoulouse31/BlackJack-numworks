@@ -849,4 +849,3 @@ def play():
         printLoseScreen(gameNumber)
 
 play()
->>>>>>> 7e82f4c47e09354296cef42ddfae20c3605759d4
