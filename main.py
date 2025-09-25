@@ -23,9 +23,9 @@ def printLogoScreen():
     t = "Made by lulutoulouse31"
     x = 8
     for i, txt in enumerate(t):
-        for chr in txt:
-            if chr != " ":
-                printMicroTxt(chr, x, 211, (0, 0, 0))
+        for char in txt:
+            if char != " ":
+                printMicroTxt(char, x, 211, (0, 0, 0))
             x += 4
 
     #PRINT LOGO
@@ -78,16 +78,16 @@ def printMoneyInfo(info, value):
         info = "Bet: " + v
 
     y = 5
-    for chr in info:
-        if chr != " ":
-            printMicroTxt(chr, x, y, (255, 255, 255))
+    for char in info:
+        if char != " ":
+            printMicroTxt(char, x, y, (255, 255, 255))
         x += 4
 
-def printMicroTxt(chr, x, y, color):
+def printMicroTxt(char, x, y, color):
     ref = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?!.,:;%+-*/=<>'_→[](){}"
     font = "2jg02oN06Fd07AE04l907dE07dl079907gl07h906lj06kl03aZ06jk07dd07da03bh05lj07IN079h05kj04ad05zj01li03jk06la06jwG6kj03YE07II05jl05jg05jz05gj05gI07Ad003l04cl003d01Bl007p03ca003lE4cj026N0119g4br04aZ007z006j007l006la03l907a003M04dZ005l005g005?005L005hE07AO7A202I200020002W0220022W5Ab00NG007000ge01AKW0uu01KH04HK02G00000u4NK03IJ06IM01IH04IK03MJ06JM0"
     for seq in range(4):
-        v = ref.index(font[(ref.index(chr) * 4) + seq])
+        v = ref.index(font[(ref.index(char) * 4) + seq])
         b = 32
         for i in range(6):
             if v >= b:
@@ -100,9 +100,9 @@ def printActionKey(key):
     x = 15
     for i, txt in enumerate(t):
         color = (255, 255, 255) if key[i] else (0, 45, 10)
-        for chr in txt:
-            if chr != " ":
-                printMicroTxt(chr, x, 211, color)
+        for char in txt:
+            if char != " ":
+                printMicroTxt(char, x, 211, color)
             x += 4
 
 def movAvailable(deck, nbDeck, balance, bet, origBet):
@@ -198,9 +198,9 @@ def betScreen(first, balance, bet):
     t = [val + " " * 16 for val in ["LEFT: Lower", "RIGHT: Higher", "OK: Start"]]
     x = 25
     for txt in t:
-        for chr in txt:
-            if chr != " ":
-                printMicroTxt(chr, x, 211, (255, 255, 255))
+        for char in txt:
+            if char != " ":
+                printMicroTxt(char, x, 211, (255, 255, 255))
             x += 4
 
     sel = 1
