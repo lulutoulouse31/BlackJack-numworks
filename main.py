@@ -105,11 +105,11 @@ def printActionKey(key):
                 printMicroTxt(char, x, 211, color)
             x += 4
 
-def movAvailable(deck, nbDeck, balance, bet, origBet):
+def movAvailable(deck, nbDeck, balance, bet, originelBet):
     b = bet[0] + bet[1] if len(bet) == 2 else bet[0]
     mov = [True, True, False, False]
     d = [val[:-1].replace("K", "10").replace("Q", "10").replace("J", "10") for val in deck]
-    if len(d) == 2 and b + origBet <= balance:
+    if len(d) == 2 and b + originelBet <= balance:
         mov[2] = True
         if d[0] == d[1] and nbDeck == 1:
             mov[3] = True
@@ -251,7 +251,7 @@ def betScreen(first, balance, bet):
 def game(balance, bet):
     printBackground()
     card = shuffleCard()
-    origBet = bet
+    originelBet = bet
     bet = [bet]
 
     player = [[card[0], card[1]]]
@@ -273,7 +273,7 @@ def game(balance, bet):
         if sum[0] >= 21:
             break
 
-        m = movAvailable(player[0], 1, balance, bet, origBet)
+        m = movAvailable(player[0], 1, balance, bet, originelBet)
         printActionKey(m)
 
         move = waitForMove(m)
@@ -315,7 +315,7 @@ def game(balance, bet):
                 loop = True
                 while loop:
 
-                    m = movAvailable(player[currentDeck], 2, balance, bet, origBet)
+                    m = movAvailable(player[currentDeck], 2, balance, bet, originelBet)
                     printActionKey(m)
 
                     move = waitForMove(m)
@@ -378,8 +378,8 @@ def game(balance, bet):
             win -= bet[i]
 
     bc = (200, 0, 0) if win < 0 else (88, 88, 88) if win == 0 else (0, 178, 50)
-    winTxt = "{:,}".format(int(win)).replace(",", " ")
-    txt = "Money earned: +" + str(winTxt) if win >= 0 else "Money lost: " + str(winTxt)
+    winText = "{:,}".format(int(win)).replace(",", " ")
+    txt = "Money earned: +" + str(winText) if win >= 0 else "Money lost: " + str(winText)
     if win == 0:
         txt = txt.replace("+", "")
     kandinsky.draw_string(txt, 175-6*len(txt), 90, (255, 255, 255), bc)
