@@ -359,13 +359,13 @@ def game(balance, bet):
             if sum[0] > 21 or (sum[0] == 21 and len(player[0]) == 2):
                 break
         elif (sum[0] > 21 and sum[1] > 21) or (sum[0] == 21 and len(player[0]) == 2 and sum[1] == 21 and len(player[1]) == 2):
-                break
+            break
 
     time.sleep(1)
 
     #CALC RESULT
     win = 0
-    for i, val in enumerate(sum):
+    for i in len(sum):
         if dsum == 21 and len(dealer) == 2 and len(player[i]) != 2:
             win -= bet[i]
         elif sum[i] == 21 and len(player[i]) == 2 and not (len(dealer) == 2 and dsum == 21):
