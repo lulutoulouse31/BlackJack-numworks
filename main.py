@@ -2,7 +2,7 @@
 Black Jack for NUMWORKS
 2025 - Lulutoulouse31
 
-Code update 25/09/25
+Code update 03/10/25
 License update 18/09/25
 
 This software is licensed under the GNU AGPL-3.0 License
@@ -365,16 +365,16 @@ def game(balance, bet):
 
     #CALC RESULT
     win = 0
-    for i in len(sum):
+    for i, k in enumerate(sum):
         if dsum == 21 and len(dealer) == 2 and len(player[i]) != 2:
             win -= bet[i]
-        elif sum[i] == 21 and len(player[i]) == 2 and not (len(dealer) == 2 and dsum == 21):
+        elif k == 21 and len(player[i]) == 2 and not (len(dealer) == 2 and dsum == 21):
             win += int(1.5*bet[i])
-        elif sum[i] > 21:
+        elif k > 21:
             win -= bet[i]
-        elif sum[i] > dsum or dsum > 21:
+        elif k > dsum or dsum > 21:
             win += bet[i]
-        elif sum[i] < dsum:
+        elif k < dsum:
             win -= bet[i]
 
     bc = (200, 0, 0) if win < 0 else (88, 88, 88) if win == 0 else (0, 178, 50)
