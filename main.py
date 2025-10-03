@@ -1,9 +1,8 @@
 """
 Black Jack for NUMWORKS
-2025 - Lulutoulouse31
+github.com/lulutoulouse31/BlackJack-numworks
 
 Code update 03/10/25
-License update 18/09/25
 
 This software is licensed under the GNU AGPL-3.0 License
 """
